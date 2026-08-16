@@ -126,7 +126,7 @@ Open PowerShell:
 Get-ADDomain
 ```
 
-![[Pasted image 20260815203639.png]]
+![Active Directory Verification](../images/Pasted%20image%2020260815203639.png)
 
 Also test DNS:
 
@@ -134,7 +134,7 @@ Also test DNS:
 nslookup HM.local
 ```
 
-![[Pasted image 20260815203707.png]]
+![DNS Verification](../images/Pasted%20image%2020260815203707.png)
 
 
 
@@ -210,7 +210,7 @@ Verify it:
 Get-ADUser alice -Properties DoesNotRequirePreAuth
 ```
 
-![[Pasted image 20260815203516.png]]
+![Vulnerable Account Configuration](../images/Pasted%20image%2020260815203516.png)
 
 
 # 9. Create another protected account
@@ -238,7 +238,7 @@ Get-ADUser alice -Properties DoesNotRequirePreAuth
 Get-ADUser bob -Properties DoesNotRequirePreAuth
 ```
 
-![[Pasted image 20260815204416.png]]
+![Protected Account Verification](../images/Pasted%20image%2020260815204416.png)
 
 
 # 10. Check the vulnerable accounts from the DC
@@ -249,7 +249,7 @@ You can identify accounts with pre-authentication disabled using:
 Get-ADUser -Filter * -Properties DoesNotRequirePreAuth | Where-Object {$_.DoesNotRequirePreAuth -eq $true} | Select-Object SamAccountName, DoesNotRequirePreAuth
 ```
 
-![[Pasted image 20260815204657.png]]
+![Vulnerable Account Enumeration](../images/Pasted%20image%2020260815204657.png)
 
 # 11. Create the attacker VM
 
@@ -351,9 +351,9 @@ bob
 The important point is that **Alice should return an AS-REP response because pre-authentication was disabled**, while Bob should not.
 
 You may see output containing an AS-REP-derived hash for Alice.
-![[Pasted image 20260815211625.png]]
+![AS-REP Roasting Result](../images/Pasted%20image%2020260815211625.png)
 
-![[Pasted image 20260815211706.png]]
+![AS-REP Hash](../images/Pasted%20image%2020260815211706.png)
 ---
 
 # 15. Your HM architecture
