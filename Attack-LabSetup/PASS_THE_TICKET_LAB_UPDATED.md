@@ -428,13 +428,13 @@ kerberos::list /export
 kerberos::list
 ```
 
-![Kerberos ticket export](./images/Pasted%20image%2020260818095631.png)
+![Kerberos ticket export](../images/Pasted%20image%2020260818095631.png)
 
 
-![Exported Kerberos tickets](./images/Pasted%20image%2020260818095708.png)
+![Exported Kerberos tickets](../images/Pasted%20image%2020260818095708.png)
 
 
-![Ticket files](./images/Pasted%20image%2020260818095822.png)
+![Ticket files](../images/Pasted%20image%2020260818095822.png)
 
 
 Tickets will export in the same directory as mimikatz.exe
